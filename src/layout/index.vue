@@ -3,14 +3,25 @@
       <header class="header" :style="{backgroundColor: iten > 82 ? '#060613' : 'transparent'}">
           <div>
             <span class="logo">
-              <img :src='LogoImg'/>
+                <router-link to="/cnyd/home" replace>
+                    <img :src='LogoImg'/>
+                </router-link>
             </span>
             <div class="right">
-                <span class="active">CNYD</span>
+                <span :class="defaultActive == '/cnyd/home' ? 'active' : ''">
+                    <router-link to="/cnyd/home" replace>
+                        CNYD
+                    </router-link>
+                </span>
                 <span>使命</span>
                 <span>優勢</span>
                 <span>應用場景</span>
                 <span>未來</span>
+                <span :class="defaultActive == '/cnyd/notice' ? 'active' : ''">
+                    <router-link to="/cnyd/notice" replace>
+                        公告
+                    </router-link>
+                </span>
                 <span>基金會</span>
                 <span>白皮書</span>
                 <span class="lang">中文 <img :src='ZeImg'/></span>
@@ -18,7 +29,10 @@
             </div>
           </div>
       </header>
-      <HomePage/>
+      <div>
+          <router-view></router-view>
+      </div>
+      <HomeFooter/>
   </div>
 </template>
 
@@ -29,15 +43,25 @@ name: 'Layout'
 })
 </script>
 <script setup lang='ts'>
- import {ref, onMounted, onBeforeMount} from 'vue'
+ import {ref, onMounted, onBeforeMount, watchEffect} from 'vue'
+ import { useRoute, useRouter } from 'vue-router';
+
  import HomePage from "@/page/home/index.vue";
+ import HomeFooter from "./footer/index.vue";
  import { 
     LogoImg,
     BgImg,
     NavAciveImg,
     ZeImg
   } from "@/assets/img/home/index";
+  const route = useRoute();
+
   const iten = ref<number>(0);
+    const defaultActive = ref('/cnyd/home');
+  watchEffect(() => {
+      console.log(route)
+      defaultActive.value = route.path;
+    });
 
   onMounted(() => {
       window.addEventListener('scroll', handleScroll)
@@ -91,6 +115,11 @@ name: 'Layout'
                 color: #fff;
                 font-size: 16px;
                 cursor: pointer;
+                text-align: center;
+                a{
+                    color: inherit;
+                    text-decoration: none;
+                }
                 &.active{
                     color: #F6C771;
                     &::before{

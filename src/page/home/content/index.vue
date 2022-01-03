@@ -41,6 +41,7 @@
           </div>
       </div>
       <ScenePage/>
+      <NoticeBack/>
   </div>
 </template>
 
@@ -53,6 +54,7 @@ name: 'HomeContent'
 <script setup lang='ts'>
  import {ref} from 'vue'
  import ScenePage from "./scene.vue";
+ import NoticeBack from "./notice.vue";
  import { 
    ShimingImg,
     YoushiImg,

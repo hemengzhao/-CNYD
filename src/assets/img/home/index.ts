@@ -6,12 +6,17 @@ import ShimingImg from "./shiming.png";
 import YoushiImg from "./youshi.png";
 import ChangjingImg from "./changjing.png";
 import WeilaiImg from "./weilai.png";
+import NotcieImg from "./notice.png";
 import Back1 from "./back1.png";
 import Back2 from "./back2.png";
 import Back3 from "./back3.png";
 import Back4 from "./back4.png";
 import Back5 from "./back5.png";
 import Back6 from "./back6.png";
+import Back7 from "./back7.png";
+import Back8 from "./back8.png";
+import Back9 from "./back9.png";
+import Back10 from "./back10.png";
 
 import Icon1 from "./icon1.png";
 import Icon2 from "./icon2.png";
@@ -38,12 +43,18 @@ export {
     YoushiImg,
     ChangjingImg,
     WeilaiImg,
+    NotcieImg,
+
     Back1,
     Back2,
     Back3,
     Back4,
     Back5,
     Back6,
+    Back7,
+    Back8,
+    Back9,
+    Back10,
     Icon1,
     Icon2,
     Icon3,

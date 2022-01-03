@@ -2,7 +2,6 @@
   <div class="homepage">
       <HomeOnePage/>
       <HomeContent/>
-      <HomeFooter/>
       <img class="back5" :src='Back5'/>
   </div>
 </template>
@@ -17,7 +16,6 @@ name: 'HomePage'
  import {ref} from 'vue'
  import HomeOnePage from "./onePage/index.vue";
  import HomeContent from "./content/index.vue";
- import HomeFooter from "./footer/index.vue";
  import {
     Back5,
   } from "@/assets/img/home/index.ts";

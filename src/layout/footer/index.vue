@@ -42,6 +42,7 @@ name: 'HomeFooter'
 <style lang='scss' scoped>
   .footer{
      background-image: url('@/assets/img//home/footerbg.png');
+     background-size: 100% 100%;
     .content{
       width: var(--main_width);
       height: 330px;

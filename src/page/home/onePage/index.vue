@@ -64,6 +64,7 @@ name: 'HomeOnePage'
 }
   .onepage{
     background-image: url('@/assets/img/home/onePageBg.png');
+    background-size: 100% 100%;
     width: 100%;
     height: 100vh;
     min-height: 800px;
